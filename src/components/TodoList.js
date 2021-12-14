@@ -42,21 +42,6 @@ const TodoList = ({
           </Box>
         </HStack>
       )}
-
-      {/* {getFilterTodos.map((todo) => (
-        <Todo
-          key={todo.id}
-          todo={todo}
-          getTodos={getTodos}
-          text={todo.text}
-          completed={todo.completed}
-          setTodo={setTodo}
-          getAnimateInsert={getAnimateInsert}
-          getIdLast={getIdLast}
-          getLengthTask={getLengthTask}
-          setLengthTask={setLengthTask}
-        />
-      ))} */}
     </>
   );
 };
