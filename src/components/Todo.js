@@ -61,7 +61,11 @@ const Todo = ({
     >
       <Box bg={completed ? "green" : "tomato"} w="100%" p={4} color="white">
         <Flex>
-          <Checkbox colorScheme="green" onChange={completedHandle}>
+          <Checkbox
+            colorScheme="green"
+            onChange={completedHandle}
+            defaultIsChecked={completed}
+          >
             {completed ? <Text as="del">{text}</Text> : <Text>{text}</Text>}
           </Checkbox>
           <Spacer />
