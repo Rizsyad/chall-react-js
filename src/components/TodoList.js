@@ -13,8 +13,23 @@ const TodoList = ({
 }) => {
   return (
     <>
-      {getLengthTask > 0 ? (
-        `You have ${getLengthTask} pending task`
+      {getLengthTask > 0 && `You have ${getLengthTask} pending task`}
+
+      {getFilterTodos.length > 0 ? (
+        getFilterTodos.map((todo) => (
+          <Todo
+            key={todo.id}
+            todo={todo}
+            getTodos={getTodos}
+            text={todo.text}
+            completed={todo.completed}
+            setTodo={setTodo}
+            getAnimateInsert={getAnimateInsert}
+            getIdLast={getIdLast}
+            getLengthTask={getLengthTask}
+            setLengthTask={setLengthTask}
+          />
+        ))
       ) : (
         <HStack>
           <Box bg="red.600" w="100%" p={4} color="white">
@@ -28,7 +43,7 @@ const TodoList = ({
         </HStack>
       )}
 
-      {getFilterTodos.map((todo) => (
+      {/* {getFilterTodos.map((todo) => (
         <Todo
           key={todo.id}
           todo={todo}
@@ -41,7 +56,7 @@ const TodoList = ({
           getLengthTask={getLengthTask}
           setLengthTask={setLengthTask}
         />
-      ))}
+      ))} */}
     </>
   );
 };
